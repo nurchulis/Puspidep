@@ -170,6 +170,33 @@ figure {
             -ms-transform: scaleX(1);
             -o-transform: scaleX(1);
             transform: scaleX(1); }
+            .filter-button
+{
+    font-size: 14px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+}
+.filter-button:hover
+{
+    font-size: 14px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
+}
+.filter-button:active
+{
+    background-color: red;
+    color: white;
+}
+
+
       #colorlib-aside #colorlib-main-menu ul li.colorlib-active a {
         color: #FFC300; }
         #colorlib-aside #colorlib-main-menu ul li.colorlib-active a:after {
