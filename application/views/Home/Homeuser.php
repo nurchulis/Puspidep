@@ -61,17 +61,22 @@
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6">
-							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(<?php echo base_url() ?>Assets/images/ab1.jpg);">
+							<?php foreach ($tampil_about as $tampil) {
+								if($tampil->place == 1){
+								 ?>
+							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->isi_about ?>);">
 							</div>
+						<?php } } ?>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="about-desc">
 								<span class="heading-meta">ABOUT</span>
-								<h1 class="colorlib-heading">Pusat Pengkajian Islam,Demokrasi dan Perdamaian</h1>
-
-								<p>Puspidepp adalah sebuah lembaga penelitian yang berfokus pada kajian islam,demokrasi dan  Perdamaian. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country,</p>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-							</div>
+								<?php foreach ($tampil_about as $tampil) {
+									if($tampil->place == 2){
+										echo $tampil->isi_about;
+									}
+								} ?>
+								</div>
 							<div class="row padding">
 								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
 									<a href="#" class="steps active">
@@ -109,86 +114,52 @@
 						<div class="col-md-6">
 							<div class="row">
 								<div class="col-md-12">
+		<?php foreach ($tampil_project as $tampil) {
+			?>
 									<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
 										<div class="colorlib-icon">
-											<i class="flaticon-sketch"></i>
+											<i class="<?php echo $tampil->logo_project ?>"></i>
 										</div>
 										<div class="colorlib-text">
-											<h3>Riset Penelitian</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+											<h3><?php echo $tampil->judul_project ?></h3>
+											<p><?php echo $tampil->deskripsi_project ?> </p>
 										</div>
 									</div>
-
-									<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
-											<i class="flaticon-worker"></i>
-										</div>
-										<div class="colorlib-text">
-											<h3>Workshop</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-										</div>
-									</div>
-
-									<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
-											<i class="flaticon-architect-with-helmet"></i>
-										</div>
-										<div class="colorlib-text">
-											<h3>Focus Group Disccusion</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-										</div>
-									</div>
-
-									<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
-											<i class="flaticon-collaboration"></i>
-										</div>
-										<div class="colorlib-text">
-											<h3>Seminar</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-										</div>
-									</div>
+		<?php } ?>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="row">
+
+
 								<div class="col-md-6">
-									<a href="project.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/p1.jpg)"></div>
-										<div class="desc">
-											<h3>Workshop</h3>
-										</div>
-									</a>
-									<a href="project.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab3.jpg)"></div>
-										<div class="desc">
-											<h3>Focus Group Discussion</h3>
-										</div>
-									</a>
-									<a href="project.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab4.jpg)"></div>
-										<div class="desc">
-											<h3>Media Convey Indonesia</h3>
-										</div>
-									</a>
-								</div>
+									<?php foreach ($tampil_slider_project as $tampil) { ?>
 
+									<?php if($tampil->id_slider_project % 2 == 1){ ?>
+									<a href="portofolio.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
+										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar ?>)"></div>
+										<div class="desc">
+											<h3><?php echo $tampil->Judul ?></h3>
+										</div>
+									</a>
+								<?php } ?>
+								<?php } ?>
+								</div>
 								<div class="col-md-6 move-bottom">
-									<a href="project.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab5.jpg)"></div>
+			<?php foreach ($tampil_slider_project as $tampil) { ?>
+									<?php if($tampil->id_slider_project % 2 == 0){ ?>
+									<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
+										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar ?>)"></div>
 										<div class="desc">
-											<h3>Diseminasi Yogyakarta</h3>
+											<h3><?php echo $tampil->Judul ?></h3>
 										</div>
 									</a>
-									<a href="project.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab6.jpg)"></div>
-										<div class="desc">
-											<h3>Diseminasi Jakarta</h3>
-										</div>
-									</a>
+								<?php } ?>
+		<?php } ?>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
@@ -237,12 +208,15 @@
 					</div>
 
 					<div class="row">
+<?php foreach ($tampil_portofolio_home as $tampil) {
+
+ ?>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/w1.jpg);">
+							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar_portofolio ?>);">
 								<div class="desc">
 									<div class="con">
-										<h3><a href="project.html">Work 01</a></h3>
-										<span>Buku</span>
+										<h3><a href="project.html"><?php echo $tampil->Judul_portofolio ?></a></h3>
+										<span><?php echo $tampil->isi_portofolio ?></span>
 										<p class="icon">
 											<span><a href="#"><i class="icon-share3"></i></a></span>
 											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
@@ -252,81 +226,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/w2.jpeg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="project.html">Work 02</a></h3>
-										<span>Monograf</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/w3.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="project.html">Work 03</a></h3>
-										<span>Publikasi Media</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/w4.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="project.html">Work 04</a></h3>
-										<span>Publikaksi Media</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/w5.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="project.html">Work 05</a></h3>
-										<span>Publikasi Media</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/w6.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="project.html">Work 06</a></h3>
-										<span>Workshop</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
+<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -340,36 +240,18 @@
 						</div>
 					</div>
 					<div class="row">
+<?php foreach ($tampil_blog_home as $tampil) { ?>
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/w1.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="blog.html" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/<?php echo $tampil->gambar_blog ?>" style="height:230px" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
-									<span><small>April 14, 2018 </small> | <small>recent work</small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Buku Hasil penelitian</a></h3>
-									<p>Buku ini berisi beberapa 8 Bab, meliputi: Pendahuluan-Menuju Islamisme Populer, Menu Bacaan Pendidikan Agama Islam di SMA dan Perguruang Tinggi, Produksi wacana islam(is) di Indonesia</p>
+									<span><small><?php echo $tampil->tgl_blog ?> </small> | <small><?php echo $tampil->kategori ?></small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="blog.html"><?php echo $tampil->judul_blog ?></a></h3>
+									<p><?php echo $tampil->isi_blog ?></p>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/w2.jpeg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>April 14, 2018 </small> | <small> Recent work </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Monograf</a></h3>
-									<p>Penelitian ini bertujuan untuk memetakan literatur keislaman yang tersebar dan diakses kalangan pelajar SMA dan mahasiswa di Indonesia.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/ab2w.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>April 14, 2018 </small> | <small> Inspiration </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Workshop Persiapan Penelitian</a></h3>
-									<p>SKegiatan pertama yang dilakukan adalah Overview Riset-riset Keislaman Kontemporer di Indonesia yang dimulai dari pukul 08.25 – 10.30 WIB. </p>
-								</div>
-							</div>
-						</div>
+<?php } ?>
 					</div>
 				</div>
 			</div>

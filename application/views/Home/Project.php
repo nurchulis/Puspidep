@@ -11,84 +11,52 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-12">
+<?php foreach ($tampil_project as $tampil) {
+  ?>
               <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
                 <div class="colorlib-icon">
-                  <i class="flaticon-worker"></i>
+                  <i class="<?php echo $tampil->logo_project ?>"></i>
                 </div>
                 <div class="colorlib-text">
-                  <h3>Riset Penelitian</h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                  <h3><?php echo $tampil->judul_project ?></h3>
+                  <p><?php echo $tampil->deskripsi_project ?> </p>
                 </div>
               </div>
-
-              <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-                <div class="colorlib-icon">
-                  <i class="flaticon-sketch"></i>
-                </div>
-                <div class="colorlib-text">
-                  <h3>Workshop</h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                </div>
-              </div>
-
-              <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-                <div class="colorlib-icon">
-                  <i class="flaticon-engineering"></i>
-                </div>
-                <div class="colorlib-text">
-                  <h3>Focus Group Disccusion</h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                </div>
-              </div>
-
-              <div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-                <div class="colorlib-icon">
-                  <i class="flaticon-crane"></i>
-                </div>
-                <div class="colorlib-text">
-                  <h3>Seminar</h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                </div>
-              </div>
+<?php } ?>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="row">
+
+
             <div class="col-md-6">
+              <?php foreach ($tampil_slider_project as $tampil) { ?>
+
+              <?php if($tampil->id_slider_project % 2 == 1){ ?>
               <a href="portofolio.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab2w.jpg)"></div>
+                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar ?>)"></div>
                 <div class="desc">
-                  <h3>Workshop</h3>
+                  <h3><?php echo $tampil->Judul ?></h3>
                 </div>
               </a>
-              <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab3.jpg)"></div>
-                <div class="desc">
-                  <h3>Focus Group Discussion</h3>
-                </div>
-              </a>
-              <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab4.jpg)"></div>
-                <div class="desc">
-                  <h3>Media Convey Indonesia</h3>
-                </div>
-              </a>
+            <?php } ?>
+            <?php } ?>
             </div>
             <div class="col-md-6 move-bottom">
+  <?php foreach ($tampil_slider_project as $tampil) { ?>
+              <?php if($tampil->id_slider_project % 2 == 0){ ?>
               <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab5.jpg)"></div>
+                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar ?>)"></div>
                 <div class="desc">
-                  <h3>Diseminasi Yogyakarta</h3>
+                  <h3><?php echo $tampil->Judul ?></h3>
                 </div>
               </a>
-              <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-                <div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/ab6.jpg)"></div>
-                <div class="desc">
-                  <h3>Diseminasi Jakarta</h3>
-                </div>
-              </a>
+            <?php } ?>
+<?php } ?>
             </div>
+
+
           </div>
         </div>
       </div>

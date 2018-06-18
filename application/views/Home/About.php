@@ -4,18 +4,23 @@
     <div class="colorlib-narrow-content">
       <div class="row">
         <div class="col-md-6">
-          <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(<?php echo base_url() ?>Assets/images/ab1.jpg);">
+          <?php foreach ($tampil_about as $tampil) {
+            if($tampil->place == 1){
+           ?>
+          <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->isi_about ?>);">
           </div>
+        <?php } } ?>
         </div>
         <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
           <div class="about-desc">
             <span class="heading-meta">ABOUT</span>
             <h1 class="colorlib-heading">PUSPIDEP</h1>
-            <h2 >Pusat Pengkajian Islam,Demokrasi dan Perdamaian</h2>
-
-            <p>Puspidepp adalah sebuah lembaga penelitian yang berfokus pada kajian islam,demokrasi dan perdamaian. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country,</p>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          </div>
+            <?php foreach ($tampil_about as $tampil) {
+            if($tampil->place == 2){
+            echo $tampil->isi_about;
+          }
+            } ?>
+        </div>
           <div class="row padding">
             <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
               <a href="#" class="steps active">
@@ -45,7 +50,11 @@
       <div class="row">
         <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
           <h2 class="colorlib-heading">History</h2>
-          <p>Sejarah lahirnya puspidep yaitu: On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+          <p><?php foreach ($tampil_about as $tampil) {
+            if($tampil->place == 3){
+            echo $tampil->isi_about;
+          }
+          } ?></p>
         </div>
         <div class="col-md-8 animate-box" data-animate-effect="fadeInRight">
           <div class="fancy-collapse-panel">
@@ -60,12 +69,15 @@
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                        <div class="panel-body">
                           <div class="row">
-                          <div class="col-md-6">
-                            <p>Puspidep merupakan lembaga penelitian yang berfokus pada kajian keislaman, demokrasi dan generasi millenial.</p>
+                          <div class="col-md-12">
+                            <p><?php foreach ($tampil_about as $tampil) {
+                            if($tampil->place == 4){
+                              echo $tampil->isi_about;
+                            }
+                            } ?></p>
+
                           </div>
-                          <div class="col-md-6">
-                            <p>Puspidep tidak hanya melakukan kegiatan riset saja akan tetepi juga turut serta aktif melakukan kegiatan Seminar,workshop,FGd,dan sebagainya.</p>
-                          </div>
+
                         </div>
                        </div>
                   </div>
@@ -79,10 +91,12 @@
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                       <div class="panel-body">
-                          <p>Puspidep merupakan lembaga penelitian yang berfokus pada kajian <strong>keislaman</strong> <strong>demokrasi</strong> dan <strong>perdamaian</strong></p>
-                      <ul>
-                        <li>Puspidep tidak hanya melakukan kegiatan riset saja akan tetepi juga turut serta aktif melakukan kegiatan Seminar,workshop,FGd,dan sebagainya.</li>
-                      </ul>
+
+                        <p><?php foreach ($tampil_about as $tampil) {
+                        if($tampil->place == 5){
+                          echo $tampil->isi_about;
+                        }
+                        } ?></p>
                       </div>
                   </div>
               </div>
@@ -95,7 +109,11 @@
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                       <div class="panel-body">
-                          <p>Puspidep merupakan lembaga penelitian yang berfokus pada kajian <strong>keislaman</strong> <strong>demokrasi</strong> dan <strong>perdamaian</strong></p>
+                          <p><?php foreach ($tampil_about as $tampil) {
+                            if($tampil->place == 6){
+                              echo $tampil->isi_about;
+                            }
+                            } ?></p>
                       </div>
                   </div>
               </div>
