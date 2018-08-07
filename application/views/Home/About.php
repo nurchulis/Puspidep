@@ -62,7 +62,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingOne">
                       <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Mengapa Puspidep?
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What We do??
                           </a>
                       </h4>
                   </div>
@@ -85,7 +85,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingTwo">
                       <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">What We do?
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Visi
                           </a>
                       </h4>
                   </div>
@@ -103,7 +103,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingThree">
                       <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Our Specialties
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Misi
                           </a>
                       </h4>
                   </div>

@@ -31,6 +31,62 @@ $summernote.summernote('insertNode', imgNode);
 });
  </script>
 
+<script>
+$('#summernote2').summernote({
+  maximumImageFileSize: 1300000,
+  tabsize:2,
+  height: 260
+});
+
+
+
+$('#summernote2').summernote({
+callbacks: {
+onImageUpload: function(files) {
+// upload image to server and create imgNode...
+$summernote.summernote('insertNode', imgNode);
+}
+}
+});
+ </script>
+ <script>
+$('#summernote3').summernote({
+  maximumImageFileSize: 1300000,
+  tabsize:2,
+  height: 260
+});
+
+
+
+$('#summernote3').summernote({
+callbacks: {
+onImageUpload: function(files) {
+// upload image to server and create imgNode...
+$summernote.summernote('insertNode', imgNode);
+}
+}
+});
+ </script>
+  <script>
+$('.summernoteall').summernote({
+  maximumImageFileSize: 1300000,
+  tabsize:2,
+  height: 150
+});
+
+
+
+$('.summernoteall').summernote({
+callbacks: {
+onImageUpload: function(files) {
+// upload image to server and create imgNode...
+$summernote.summernote('insertNode', imgNode);
+}
+}
+});
+ </script>
+
+
   <script type="text/javascript">
   $(document).ready(function(){
     $('.data').DataTable({

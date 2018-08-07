@@ -422,17 +422,14 @@ if(!$this->upload->do_upload('gambar_kiriman')){
          
 
 
-                $config['upload_path']          = './Assets/images/Kiriman/Slider';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg';
-                $config['max_size']             = 0;
-                $config['max_width']            = 0;
-                $config['max_height']           = 0;
-                $config['overwrite'] = true;
-                $config['encrypt_name']= true;
-                $this->load->library('upload', $config);
-                echo "sasjao".$this->input->post('gambar_slider');
-                if ($this->upload->do_upload('gambar_slider'))
-                {
+              $config['upload_path'] = './Assets/images/Kiriman/Slider';
+        $config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+        $config['max_size']    = '0';
+        $config['max_width']  = '0';
+        $config['max_height']  = '0';
+        $config['encrypt_name']= true;
+        $this->upload->initialize($config);
+        if(!$this->upload->do_upload('gambar_kiriman')){
                 
 
                         $ambil = array('upload_data' => $this->upload->data());
@@ -442,14 +439,14 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'gambar_slider' => $this->input->post('slider_lama'),
                         'link' => $this->input->post('link'),
                         'judul'   => $this->input->post('judul'),
-                        'sub_content'   => $this->input->post('caption'),
+                        'sub_content'   => $this->input->post('sub_content'),
 
                     );
                         
                         $where = array(
                         'id_slider' =>$this->input->post('id_slider'));           
                         $this->M_admin->update_slider($where,$data,'Slider');
-                        //redirect('admin/slider');
+                        redirect('HalamanAdmin/Setting');
                         print_r($data);
                     }
                 else{       
@@ -467,7 +464,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                 $config['quality']= '70';
                 $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
-                $config['width']         = AUTO;
+                $config['width']         = 600;
                 $config['height']       = 450;
                 $this->image_lib->initialize($config);
                 $this->image_lib->resize();
@@ -482,11 +479,77 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'sub_content'   => $this->input->post('sub_content'),
 
                     );
-           
+                 print_r($data);
              $where = array('id_slider' =>$this->input->post('id_slider'));           
             $this->M_admin->update_slider($where,$data,'Slider');
-            //redirect('admin/slider');
+            redirect('HalamanAdmin/Setting');
             }
-            }         
+            }
+     function edit_about_gambar(){
+        $config['upload_path'] = './Assets/images';
+        $config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+        $config['max_size']    = '0';
+        $config['max_width']  = '0';
+        $config['max_height']  = '0';
+        $config['encrypt_name']= true;
+        $this->upload->initialize($config);
+        if(!$this->upload->do_upload('gambar_kiriman')){
+                
+
+                        $ambil = array('upload_data' => $this->upload->data());
+                        $this->load->model('M_admin');
+                        $data = array(
+                        'id_about' =>$this->input->post('id_about'),
+                        'gambar_slider' => $this->input->post('slider_lama'),
+                        'link' => $this->input->post('link'),
+                        'judul'   => $this->input->post('judul'),
+                        'sub_content'   => $this->input->post('sub_content'),
+
+                    );
+                        
+                        $where = array(
+                        'id_slider' =>$this->input->post('id_slider'));           
+                        $this->M_admin->update_slider($where,$data,'Slider');
+                        redirect('HalamanAdmin/Setting');
+                        print_r($data);
+                    }
+                else{       
+
+                $path_to_file = './Assets/images/Kiriman/Slider/'.$this->input->post('slider_lama');
+                unlink($path_to_file);
+
+
+                $this->load->library('upload');
+                $this->load->library('image_lib');
+                $gbr = $this->upload->data();
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './Assets/images/Kiriman/Slider/'.$gbr['file_name'];
+                $config['new_image'] = './Assets/images/Kiriman/Slider/'.$gbr['file_name'];
+                $config['quality']= '70';
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 600;
+                $config['height']       = 450;
+                $this->image_lib->initialize($config);
+                $this->image_lib->resize();
+
+                     $ambil = array('upload_data' => $this->upload->data());
+            $this->load->model('M_admin');
+              $data = array(
+                        'id_slider' =>$this->input->post('id_slider'),
+                        'gambar_slider' =>$this->upload->data('file_name'),
+                        'link' => $this->input->post('link'),
+                        'judul'   => $this->input->post('judul'),
+                        'sub_content'   => $this->input->post('sub_content'),
+
+                    );
+                 print_r($data);
+             $where = array('id_slider' =>$this->input->post('id_slider'));           
+            $this->M_admin->update_slider($where,$data,'Slider');
+            redirect('HalamanAdmin/Setting');
+            }
+            }
+
+                  
     
 }
