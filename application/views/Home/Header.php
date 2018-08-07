@@ -41,6 +41,9 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>Assets/css/style.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <script src="http://www.dishutbun.jogjaprov.go.id/assets/js/jquery.min.js"></script>
 	<!-- Modernizr JS -->
 	<script src="<?php echo base_url() ?>Assets/js/modernizr-2.6.2.min.js"></script>

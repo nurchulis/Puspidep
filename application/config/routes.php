@@ -51,6 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Home';
 $route['Halaman/(:any)'] = 'Home/index/$1';
+$route['Blog/(:any)/(:any)/(:any)'] = 'Home/index/$1/$2/$3';
+$route['HalamanAdmin/(:any)'] = 'Admin/index/$1';
+$route['HalamanAdmin/(:any)/(:any)'] = 'Admin/index/$1/$2';
 $route['Halaman/(:any)/(:any)'] = 'Home/index/$1/$2';
+$route['Halaman/(:any)/(:any)/(:any)'] = 'Home/index/$1/$2/$3';
+$route['Project/(:any)/(:any)/(:any)'] = 'Home/index/$1/$2/$3';
+$route['Portofolio/(:any)/(:any)/(:any)'] = 'Home/index/$1/$2/$3';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

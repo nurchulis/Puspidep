@@ -19,10 +19,13 @@ class Home extends CI_Controller {
 		if($this->uri->segment('2') == 'Blog'){
 					$config['base_url']=base_url()."Halaman/Blog";
 			        $config['total_rows']= $this->db->query("SELECT * FROM Blog")->num_rows();
-		}else {
+		}else if($this->uri->segment('2') == 'Portofolio') {
 
 					$config['base_url']=base_url()."Halaman/Portofolio";
 			        $config['total_rows']= $this->db->query("SELECT * FROM Portofolio")->num_rows();
+		}else  {
+			$config['base_url']=base_url()."Halaman/Project";
+					$config['total_rows']= $this->db->query("SELECT * FROM Project_post")->num_rows();
 		}
 
         $config['per_page']=6;
@@ -49,14 +52,25 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
 
+		$tgl=$this->uri->segment('4');
+
 
 		$data['tampil_project']=$this->M_Tampil_project->tampil_project();
 		$data['tampil_slider_project']=$this->M_Tampil_project->tampil_project_slider();
 		$data['tampil_about']=$this->M_Tampil_about->tampil_about();
 		$data['tampil_portofolio_home']=$this->M_Tampil_Portofolio->tampil_portofolio_home();
 		$data['tampil_blog']=$this->M_Tampil_blog->tampil_blog($config);
+		$data['tampil_blog_1']=$this->M_Tampil_blog->tampil_blog_home();
+		$data['tampil_project_post']=$this->M_Tampil_project->tampil_project_post($config);
+		$data['tampil_project_post_1']=$this->M_Tampil_project->tampil_project_1();
 		$data['tampil_blog_home']=$this->M_Tampil_blog->tampil_blog_home();
 		$data['tampil_portofolio']=$this->M_Tampil_Portofolio->tampil_portofolio($config);
+		$data['data_slider']=$this->M_Tampil_about->tampil_slider();
+		$data['tampil_portofolio_di']=$this->M_Tampil_Portofolio->tampil_portofolio_home();
+		$data['tampil_project_id']=$this->M_Tampil_project->tampil_pilih_project($id,$tgl)->result();
+		$data['tampil_blog_id']=$this->M_Tampil_blog->tampil_pilih_blog($id,$tgl)->result();
+		$data['tampil_portofolio_id']=$this->M_Tampil_Portofolio->tampil_pilih_portofolio($id,$tgl)->result();
+
 
 		$this->load->view('Home/Header.php');
 		$this->load->view('Home/'.$page,$data);

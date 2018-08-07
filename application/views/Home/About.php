@@ -165,7 +165,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
           <p class="colorlib-lead">Get close with Puspidep</p>
-          <p><a href="contact.html" class="btn btn-primary btn-learn">Contact us</a></p>
+          	<p><a href="<?php echo base_url() ?>Halaman/Contact" class="btn btn-primary btn-learn">Contact us</a></p>
         </div>
 
       </div>

@@ -3,8 +3,8 @@
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">PORTOFOLIO</span>
-							<h2 class="colorlib-heading">Recent Project</h2>
+							<span class="heading-meta">Home/Portofolio</span>
+							<h2 class="colorlib-heading">Recent Portofolio</h2>
 						</div>
 					</div>
 
@@ -13,10 +13,10 @@
 						<?php foreach ($tampil_portofolio as $tampil) {
 						 ?>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar_portofolio ?>);">
+							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/Kiriman/thumb/<?php echo $tampil->Gambar_portofolio ?>);">
 								<div class="desc">
 									<div class="con">
-										<h3><a href="project.html"><?php echo $tampil->Judul_portofolio ?></a></h3>
+										<h3><a href="<?php echo base_url() ?>Portofolio/Show_portofolio/<?php echo $tampil->id_portofolio ?>/<?php echo $tampil->tgl_portofolio ?>"><?php echo $tampil->Judul_portofolio ?></a></h3>
 										<span><?php echo $tampil->isi_portofolio ?></span>
 										<p class="icon">
 											<span><a href="#"><i class="icon-share3"></i></a></span>

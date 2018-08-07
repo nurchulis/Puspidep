@@ -5,5 +5,8 @@ class M_Tampil_about extends CI_Model{
     $hasil= $this->db->get('About');
     return $hasil->result();
   }
+  function tampil_slider(){
+  	return $this->db->get('Slider')->result();
+  }
 }
   ?>
