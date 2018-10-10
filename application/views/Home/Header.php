@@ -21,7 +21,8 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+	 <link rel="icon" type="image/png" sizes="16x16" href="http://puspidep.org//Assets/images/favicon.ico">
+
 
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 
@@ -75,10 +76,10 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved to Puspidep </a>
 
 				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
+					<li><a href="https://web.facebook.com/puspidep.puspidep.9"><i class="icon-facebook2"></i></a></li>
 					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
+					<li><a href="https://www.instagram.com/puspidep/?hl=id"><i class="icon-instagram"></i></a></li>
+					
 				</ul>
 			</div>
 

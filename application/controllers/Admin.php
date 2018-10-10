@@ -22,6 +22,9 @@ class Admin extends CI_Controller {
 	{	$data['pro']= $this->M_admin->count_pro();
 		$data['blg']= $this->M_admin->count_blog();
 		$data['por']= $this->M_admin->count_por();
+		$data['admin']= $this->M_admin->ambil_admin();
+		$data['data_log2'] =$this->M_admin->ambil_log2();
+		$data['data_log'] =$this->M_admin->ambil_log();
 		$data['tampil_about']=$this->M_Tampil_about->tampil_about();
 		$data['data_slider']=$this->M_Tampil_about->tampil_slider();
 		$data['ambil_project']=$this->M_admin->ambil_edit_project($id);

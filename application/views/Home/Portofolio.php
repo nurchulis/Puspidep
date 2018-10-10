@@ -17,12 +17,10 @@
 								<div class="desc">
 									<div class="con">
 										<h3><a href="<?php echo base_url() ?>Portofolio/Show_portofolio/<?php echo $tampil->id_portofolio ?>/<?php echo $tampil->tgl_portofolio ?>"><?php echo $tampil->Judul_portofolio ?></a></h3>
-										<span><?php echo $tampil->isi_portofolio ?></span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
+										<span>
+											<?php echo mb_substr($tampil->isi_portofolio, 0, 100).".."; ?>
+									
+										
 									</div>
 								</div>
 							</div>

@@ -87,9 +87,13 @@
                           ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td class="txt-oflo"><?php echo $tampil->judul_project ?></td>
+                                <td class="txt-oflo">
+                                <a href="<?php echo base_url() ?>Project/Show_project/<?php echo $tampil->id_project_post ?>/<?php echo $tampil->tgl_project ?>" target="_blank">
+                                <?php echo $tampil->judul_project ?>
+                                </a>
+                                </td>
                                 <td><?php echo $tampil->tgl_project ?></td>
-                                <td class="txt-oflo"><?php echo $tampil->deskripsi ?></td>
+                                <td class="txt-oflo"><?php echo mb_substr($tampil->deskripsi, 0, 40).".."; ?></td>
                                  <td class="txt-oflo"><?php if($tampil->status == 1){
                                     echo "Masih Di Draft";
                                 }else {
@@ -167,9 +171,13 @@
                           ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td class="txt-oflo"><?php echo $tampil->judul_blog ?></td>
+                                <td class="txt-oflo">
+                                <a href="<?php echo base_url() ?>Blog/Show_blog/<?php echo $tampil->id_blog ?>/<?php echo $tampil->tgl_blog ?>" target="_blank">
+                                <?php echo $tampil->judul_blog ?>
+                                </a>
+                                </td>
                                 <td><?php echo $tampil->tgl_blog ?></td>
-                                <td class="txt-oflo"><?php echo $tampil->deskripsi ?></td>
+                                <td class="txt-oflo"><?php echo mb_substr($tampil->deskripsi, 0, 40).".."; ?></td>
                                 <td class="txt-oflo"><?php if($tampil->status == 1){
                                     echo "Masih Di Draft";
                                 }else {
@@ -245,7 +253,10 @@
                           ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td class="txt-oflo"><?php echo $tampil->Judul_portofolio ?></td>
+                                <td class="txt-oflo">
+                                <a href="<?php echo base_url() ?>Portofolio/Show_portofolio/<?php echo $tampil->id_portofolio?>/<?php echo $tampil->tgl_portofolio ?>" target="_blank">  
+                                <?php echo $tampil->Judul_portofolio ?>
+                                </a></td>
                                 <td><?php echo $tampil->tgl_portofolio ?></td>
                                <td class="txt-oflo"><?php if($tampil->status == 1){
                                     echo "Masih Di Draft";

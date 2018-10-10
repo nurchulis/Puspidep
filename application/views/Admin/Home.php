@@ -74,30 +74,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td class="txt-oflo">Elite admin</td>
-                                <td>SALE</td>
+                          <?php 
+                          $no=1;
+                          foreach ($data_log as $tampil): ?>
+                              
+                          
+                            <tr <?php if($tampil->level == 1){
+                                echo "class='success'";
+                            }else if($tampil->level ==2){
+                                echo "class='warning'";
+                            }else {
+                                echo "class='danger'";
+                            } ?>
+                            >
+                                <td><?php echo $no++; ?></td>
+                                <td class="txt-oflo">Admin</td>
+                                <td><?php echo $tampil->do; ?></td>
                                 <td class="txt-oflo">April 18, 2017</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td class="txt-oflo">Real Homes WP Theme</td>
-                                <td>EXTENDED</td>
-                                <td class="txt-oflo">April 19, 2017</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td class="txt-oflo">Ample Admin</td>
-                                <td>EXTENDED</td>
-                                <td class="txt-oflo">April 19, 2017</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td class="txt-oflo">Medical Pro WP Theme</td>
-                                <td>TAX</td>
-                                <td class="txt-oflo">April 20, 2017</td>
-                            </tr>
+                          <?php endforeach ?>
 
                         </tbody>
                     </table>

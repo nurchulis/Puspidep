@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>Assets/Admin/images/favicon.png">
-    <title>Ample Admin Template - The Ultimate Multipurpose admin template</title>
+
+ <link rel="icon" type="image/png" sizes="16x16" href="http://puspidep.org//Assets/images/favicon.ico">
+    <title>Admin</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() ?>Assets/Admin/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
@@ -96,13 +97,15 @@
                         <a href="<?php echo base_url() ?>HalamanAdmin/Setting" class="waves-effect"><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Settings</a>
                     </li>
                     <li>
-                        <a href="fontawesome.html" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Log</a>
+                        <a href="<?php echo base_url() ?>HalamanAdmin/Log" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Log</a>
                     </li>
                     <li>
-                        <a href="map-google.html" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>User</a>
+                        <a href="<?php echo base_url() ?>HalamanAdmin/User" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>User</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() ?>Login/logout" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logout</a>
+                        
+                            <a data-toggle="modal" data-target="#modaltok" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true">
+                        </i>Logout</a>
                     </li>
 
 

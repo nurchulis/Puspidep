@@ -33,7 +33,6 @@
                                                 <th><i class="fa fa-picture-o" aria-hidden="true"></i> FOTO SLIDER</th>
                                                 <th><i class="fa fa-comment" aria-hidden="true"></i>JUDUL</th>
                                                  <th><i class="fa fa-wrench" aria-hidden="true"></i>CAPTION</th>
-                                                <th><i class="fa fa-pencil-square-o" aria-hidden="true"></i>LINK</th>
                                                 <th><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ACTION</th>
                                                
                                                 
@@ -61,10 +60,7 @@
                                             <?php echo $data->sub_content ?>
                     
                                             </td>    
-                                                <td>
-                                                    <?php echo $data->link; ?>
-
-                                                </td>
+                                               
 
                                     <?php echo form_open_multipart('Kirim/edit_slider');?>
                                                 <form action="<?php echo base_url() ?>Kirim/edit_slider"  enctype="multipart/form-data">
@@ -160,16 +156,19 @@
             <h4 class="page-title">
                     <i class="fa fa-cog" aria-hidden="true"></i>    
                     Pengaturan Gambar About</h4>
-                <form action="<?php echo base_url() ?>">    
+            <form action="<?php echo base_url() ?>Kirim/edit_about_gambar" method="Post" enctype="multipart/form-data"> 
                 <?php foreach ($tampil_about as $tampil) {
                                 if($tampil->place == 1){
                                  ?>
                     <img src="<?php echo base_url() ?>Assets/images/<?php echo $tampil->isi_about ?>" width="400px;">
                     <br/>
-                Ganti Gambar :<input type="file" name="gambar_about">
+                    <input type="hidden" name="id_about" value="<?php echo $tampil->id_about; ?>">
+                    <input type="hidden" name="gambar_lama" value="<?php echo $tampil->isi_about; ?>">
+                    <input type="hidden" name="place" value="<?php echo $tampil->place; ?>">
+                Ganti Gambar :<input type="file" name="gambar_about" required/>
                         <?php } } ?>
             
-                    <button class="btn btn-success" style="float: right;">Simpan</button>
+                    <button class="btn btn-success" type="submit" style="float: right;">Simpan</button>
                 </form>
                 </div> 
         
@@ -178,66 +177,96 @@
                     <i class="fa fa-cog" aria-hidden="true"></i>    
                     Pengaturan About</h3>
                     <p><b><h4>Header About :</h4></b></p>
-                    <textarea class="form-control" id="summernote2" name="header_about" style="width: 400px">
+                    <form action="<?php echo base_url() ?>Kirim/edit_about" method="Post">
+                    <textarea class="form-control" id="summernote2"  name="isi_about" style="width: 400px">
                         <?php foreach ($tampil_about as $tampil) {
                                     if($tampil->place == 2){
                                         echo $tampil->isi_about;
+                                        ?>  
+                                 
+                    </textarea>
+                    <input type="hidden" name="id_about" value="<?php echo $tampil->id_about ?>">
+                    <input type="hidden" name="place" value="<?php echo $tampil->place ?>">
+                           <?php   
                                     }
                                 } ?>
-                    </textarea>
-                    <button class="btn btn-success" style="float: right;">Simpan</button>
+                    <button class="btn btn-success" type="submit" style="float: right;">Simpan</button>
+                </form>
                 </div>
                 <div class="col-md-6">
                 <div class="col-md-12">
                   <p><b><h4>VIsi Puspidep :</h4></b></p>
-                    <textarea class="form-control summernoteall"  name="header_about" style="width: 180px">
+                    <form action="<?php echo base_url() ?>Kirim/edit_about" method="Post">
+                    <textarea class="form-control summernoteall"  name="isi_about" style="width: 180px">
                         <?php foreach ($tampil_about as $tampil) {
                                     if($tampil->place == 5){
                                         echo $tampil->isi_about;
+                                        ?>
+
+                    </textarea>
+                    <input type="hidden" name="id_about" value="<?php echo $tampil->id_about ?>">
+                    <input type="hidden" name="place" value="<?php echo $tampil->place ?>">
+                    <?php
                                     }
-                                } ?>
-                    </textarea>  
-                    <button class="btn btn-success" style="float: right;">Simpan</button>
+                                } ?>  
+                    <button class="btn btn-success" type="submit" style="float: right;">Simpan</button>
+                </form>
                 </div>
 
                   <div class="col-md-12">
                   <p><b><h4>Misi Puspidep :</h4></b></p>
-                    <textarea class="form-control summernoteall"  name="header_about" style="width: 180px">
+                    <form action="<?php echo base_url() ?>Kirim/edit_about" method="Post">
+                    <textarea class="form-control summernoteall"  name="isi_about" style="width: 180px">
                         <?php foreach ($tampil_about as $tampil) {
                                     if($tampil->place == 6){
                                         echo $tampil->isi_about;
-                                    }
-                                } ?>
+                                ?>
+                    <input type="hidden" name="id_about" value="<?php echo $tampil->id_about ?>">
+                    <input type="hidden" name="place" value="<?php echo $tampil->place ?>">
                     </textarea>  
-
-                    <button class="btn btn-success" style="float: right;">Simpan</button>
+                    <?php     }
+                                } ?>
+                    <button class="btn btn-success" type="submit" style="float: right;">Simpan</button>
+                </form>
                 </div>
                 <div class="col-md-12">
+                    <form action="<?php echo base_url() ?>Kirim/edit_about" method="Post">
                   <p><b><h4>What We do Puspidep :</h4></b></p>
-                    <textarea class="form-control summernoteall"  name="header_about" style="width: 180px">
+                    <textarea class="form-control summernoteall"  name="isi_about" style="width: 180px">
                         <?php foreach ($tampil_about as $tampil) {
                                     if($tampil->place == 4){
                                         echo $tampil->isi_about;
-                                    }
-                                } ?>
-                    </textarea>  
+                             ?>
+                    <input type="hidden" name="id_about" value="<?php echo $tampil->id_about ?>">
+                    <input type="hidden" name="place" value="<?php echo $tampil->place ?>">
 
-                    <button class="btn btn-success" style="float: right;">Simpan</button>
+                    </textarea>  
+                    <?php        }
+                                } ?>
+                    <button class="btn btn-success" type="submit" style="float: right;">Simpan</button>
+                </form>
                 </div>
                 </div>
 
                 <div class="col-md-6">
                     <p><b><h4>History About :</h4></b></p>
-                    <textarea class="form-control" id="summernote3" name="header_about" style="width: 400px">
+
+                    <form action="<?php echo base_url() ?>Kirim/edit_about" method="Post">
+                    <textarea class="form-control" id="summernote3" name="isi_about" style="width: 400px">
                         <?php foreach ($tampil_about as $tampil) {
                                     if($tampil->place == 3){
                                         echo $tampil->isi_about;
-                                    }
-                                } ?>
-                    </textarea>
-                    <button class="btn btn-success" style="float: right;">Simpan</button>    
-                </div>
+                             ?>
+                    <input type="hidden" name="id_about" value="<?php echo $tampil->id_about ?>">
+                    <input type="hidden" name="place" value="<?php echo $tampil->place ?>">
 
+                    </textarea>
+                    <?php
+                           }
+                                } ?>
+                    <button class="btn btn-success" style="float: right;">Simpan</button>    
+                    </form>
+                </div>
             </div>
         </div>
     </div>

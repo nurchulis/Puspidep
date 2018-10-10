@@ -3,6 +3,7 @@ class Kirim extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->model('M_kirim');
+        $this->load->model('M_admin');
         $this->load->library('upload');
         
         $this->load->helper(array('form', 'url'));
@@ -53,9 +54,12 @@ echo "asa";
 						'status'=>$this->input->post('status'),
 						'gambar_project' =>$data["raw_name"].$data['file_ext']
 			);
-                  print_r($data);
+            $do="Memposting Sebuah Kiriman Project :".$this->input->post('judul_project');
+            $level="1";         
+            $this->log($level,$do);
+
     $this->db->insert('Project_post',$data);
-    redirect('HalamanAdmin/Posting_Project');
+    redirect('HalamanAdmin/Posting_home');
 }
 }
      public function edit_project(){
@@ -78,7 +82,9 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'status'=>$this->input->post('status'),
                         'gambar_project' =>$this->input->post('gambar_lama')
             );
-    echo print_r($data);
+    $do="Mengedit Sebuah Project :".$this->input->post('judul_project');
+            $level="2";         
+            $this->log($level,$do);
     $where = array('id_project_post' =>$this->input->post('id_project'));   
     $this->M_kirim->update_project($where,$data,'Project_post');
       redirect('HalamanAdmin/Posting_home');
@@ -125,6 +131,9 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'status'=>$this->input->post('status'),
                         'gambar_project' =>$data["raw_name"].$data['file_ext']
             );
+    $do="Mengedit dan menganti Foto Sebuah Project :".$this->input->post('judul_project');
+            $level="2";         
+            $this->log($level,$do);
     $where = array('id_project_post' =>$this->input->post('id_project'));   
     $this->M_kirim->update_project($where,$data,'Project_post');
    redirect('HalamanAdmin/Posting_home');
@@ -177,9 +186,12 @@ echo "asa";
                         'status'=>$this->input->post('status'),
                         'Gambar_portofolio' =>$data["raw_name"].$data['file_ext']
             );
-                  print_r($data);
+     $do="Memposting Sebuah Portofolio :".$this->input->post('judul_portofolio');
+            $level="1";         
+            $this->log($level,$do);   
+
     $this->db->insert('Portofolio',$data);
-    redirect('HalamanAdmin/Posting_Project');
+    redirect('HalamanAdmin/Posting_home');
 }
 }
      public function edit_portofolio(){
@@ -202,7 +214,9 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'status'=>$this->input->post('status'),
                         'Gambar_portofolio' =>$this->input->post('gambar_lama')
             );
-    echo print_r($data);
+     $do="Mengedit Sebuah Portofolio :".$this->input->post('judul_portofolio');
+            $level="2";         
+            $this->log($level,$do);   
     $where = array('id_portofolio' =>$this->input->post('id_portofolio'));   
     $this->M_kirim->update_project($where,$data,'Portofolio');
      redirect('HalamanAdmin/Posting_home');
@@ -249,6 +263,10 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'status'=>$this->input->post('status'),
                         'Gambar_portofolio' =>$data["raw_name"].$data['file_ext']
             );
+     $do="Mengedit dan Menganti Foto Sebuah Portofolio :".$this->input->post('judul_portofolio');
+            $level="2";         
+            $this->log($level,$do); 
+
     $where = array('id_portofolio' =>$this->input->post('id_portofolio'));   
     $this->M_kirim->update_portofolio($where,$data,'Portofolio');
    redirect('HalamanAdmin/Posting_home');
@@ -300,7 +318,9 @@ echo "asa";
                         'status'=>$this->input->post('status'),
                         'gambar_blog' =>$data["raw_name"].$data['file_ext']
             );
-                  print_r($data);
+     $do="Memposting Sebuah Blog :".$this->input->post('judul_blog');
+            $level="1";         
+            $this->log($level,$do);     
     $this->db->insert('Blog',$data);
     redirect('HalamanAdmin/Posting_home');
 }
@@ -325,7 +345,9 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'status'=>$this->input->post('status'),
                         'gambar_blog' =>$this->input->post('gambar_lama')
             );
-    echo print_r($data);
+      $do="Mengedit  Sebuah Blog :".$this->input->post('judul_blog');
+            $level="2";         
+            $this->log($level,$do);  
     $where = array('id_blog' =>$this->input->post('id_blog'));   
     $this->M_kirim->update_blog($where,$data,'Blog');
      redirect('HalamanAdmin/Posting_home');
@@ -372,6 +394,9 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'status'=>$this->input->post('status'),
                         'gambar_blog' =>$data["raw_name"].$data['file_ext']
             );
+    $do="Mengedit dan menganti Foto Sebuah Blog :".$this->input->post('judul_blog');
+            $level="2";         
+            $this->log($level,$do);  
     $where = array('id_blog' =>$this->input->post('id_blog'));   
     $this->M_kirim->update_blog($where,$data,'Blog');
    redirect('HalamanAdmin/Posting_home');
@@ -384,7 +409,11 @@ if(!$this->upload->do_upload('gambar_kiriman')){
            $path_to_file = './Assets/images/Kiriman/'.$crut[0]->gambar_project;
                 unlink($path_to_file);
         $path_to_file2 = './Assets/images/Kiriman/thumb/'.$crut[0]->gambar_project;
-                unlink($path_to_file2);   
+                unlink($path_to_file2);
+
+                $do="Menghapus Sebuah Project :".$crut[0]->judul_project;
+            $level="3";         
+            $this->log($level,$do);     
 
 
              $this->db->delete('Project_post', array('id_project_post'=>$id));
@@ -399,6 +428,10 @@ if(!$this->upload->do_upload('gambar_kiriman')){
         $path_to_file2 = './Assets/images/Kiriman/thumb/'.$crut[0]->gambar_blog;
                 unlink($path_to_file2);   
 
+         $do="Menghapus Sebuah Blog :".$crut[0]->judul_blog;
+            $level="3";         
+            $this->log($level,$do);   
+
 
              $this->db->delete('Blog', array('id_blog'=>$id));
             redirect('HalamanAdmin/Posting_home');
@@ -412,6 +445,10 @@ if(!$this->upload->do_upload('gambar_kiriman')){
         $path_to_file2 = './Assets/images/Kiriman/thumb/'.$crut[0]->Gambar_portofolio;
                 unlink($path_to_file2);   
 
+                 $do="Menghapus Sebuah Portofolio :".$crut[0]->Judul_portofolio;
+            $level="3";         
+            $this->log($level,$do);   
+
 
              $this->db->delete('Portofolio', array('id_portofolio'=>$id));
             redirect('HalamanAdmin/Posting_home');
@@ -420,8 +457,6 @@ if(!$this->upload->do_upload('gambar_kiriman')){
     public function edit_slider(){
 
          
-
-
               $config['upload_path'] = './Assets/images/Kiriman/Slider';
         $config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
         $config['max_size']    = '0';
@@ -442,12 +477,15 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'sub_content'   => $this->input->post('sub_content'),
 
                     );
-                        
+            $do="Mengedit sebuah slider Dengan judul :".$this->input->post('judul');
+            $level="2";         
+            $this->log($level,$do);  
+
                         $where = array(
                         'id_slider' =>$this->input->post('id_slider'));           
                         $this->M_admin->update_slider($where,$data,'Slider');
                         redirect('HalamanAdmin/Setting');
-                        print_r($data);
+                      
                     }
                 else{       
 
@@ -461,7 +499,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                 $config['image_library'] = 'gd2';
                 $config['source_image'] = './Assets/images/Kiriman/Slider/'.$gbr['file_name'];
                 $config['new_image'] = './Assets/images/Kiriman/Slider/'.$gbr['file_name'];
-                $config['quality']= '70';
+                $config['quality']= '100';
                 $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
                 $config['width']         = 600;
@@ -479,7 +517,10 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                         'sub_content'   => $this->input->post('sub_content'),
 
                     );
-                 print_r($data);
+              $do="Mengedit Foto slider Dengan judul :".$this->input->post('judul');
+            $level="2";         
+            $this->log($level,$do);
+               
              $where = array('id_slider' =>$this->input->post('id_slider'));           
             $this->M_admin->update_slider($where,$data,'Slider');
             redirect('HalamanAdmin/Setting');
@@ -493,39 +534,22 @@ if(!$this->upload->do_upload('gambar_kiriman')){
         $config['max_height']  = '0';
         $config['encrypt_name']= true;
         $this->upload->initialize($config);
-        if(!$this->upload->do_upload('gambar_kiriman')){
+        if(!$this->upload->do_upload('gambar_about')){
                 
 
-                        $ambil = array('upload_data' => $this->upload->data());
-                        $this->load->model('M_admin');
-                        $data = array(
-                        'id_about' =>$this->input->post('id_about'),
-                        'gambar_slider' => $this->input->post('slider_lama'),
-                        'link' => $this->input->post('link'),
-                        'judul'   => $this->input->post('judul'),
-                        'sub_content'   => $this->input->post('sub_content'),
-
-                    );
-                        
-                        $where = array(
-                        'id_slider' =>$this->input->post('id_slider'));           
-                        $this->M_admin->update_slider($where,$data,'Slider');
-                        redirect('HalamanAdmin/Setting');
-                        print_r($data);
                     }
                 else{       
 
-                $path_to_file = './Assets/images/Kiriman/Slider/'.$this->input->post('slider_lama');
+                $path_to_file = './Assets/images/'.$this->input->post('gambar_lama');
                 unlink($path_to_file);
-
 
                 $this->load->library('upload');
                 $this->load->library('image_lib');
                 $gbr = $this->upload->data();
                 $config['image_library'] = 'gd2';
-                $config['source_image'] = './Assets/images/Kiriman/Slider/'.$gbr['file_name'];
-                $config['new_image'] = './Assets/images/Kiriman/Slider/'.$gbr['file_name'];
-                $config['quality']= '70';
+                $config['source_image'] = './Assets/images/'.$gbr['file_name'];
+                $config['new_image'] = './Assets/images/'.$gbr['file_name'];
+                $config['quality']= '100';
                 $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
                 $config['width']         = 600;
@@ -533,22 +557,77 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                 $this->image_lib->initialize($config);
                 $this->image_lib->resize();
 
-                     $ambil = array('upload_data' => $this->upload->data());
-            $this->load->model('M_admin');
-              $data = array(
-                        'id_slider' =>$this->input->post('id_slider'),
-                        'gambar_slider' =>$this->upload->data('file_name'),
-                        'link' => $this->input->post('link'),
-                        'judul'   => $this->input->post('judul'),
-                        'sub_content'   => $this->input->post('sub_content'),
+                $ambil = array('upload_data' => $this->upload->data());
+                $this->load->model('M_admin');
+               $data = array(
+                        'id_about' =>$this->input->post('id_about'),
+                        'isi_about' => $this->upload->data('file_name'),
+                        'place' => $this->input->post('place')
 
                     );
-                 print_r($data);
-             $where = array('id_slider' =>$this->input->post('id_slider'));           
-            $this->M_admin->update_slider($where,$data,'Slider');
+               $do="Mengedit Foto About ";
+            $level="2";         
+            $this->log($level,$do);
+             
+             $where = array('id_about' =>$this->input->post('id_about'));           
+            $this->M_admin->update_about($where,$data,'About');
             redirect('HalamanAdmin/Setting');
             }
             }
+
+
+     function edit_about(){
+    $id = $this->input->post('id_about');
+    $data = array(
+        'id_about' => $this->input->post('id_about'),
+        'isi_about' =>$this->input->post('isi_about'),
+        'place'=> $this->input->post('place')
+    );
+ 
+    $where = array(
+        'id_about' => $id
+    );
+    $do="Mengedit settingan di About ";
+            $level="2";         
+            $this->log($level,$do);
+    $this->M_admin->update_about($where,$data,'About');
+       redirect('HalamanAdmin/Setting');
+    }
+    public function hashpassword($password) {
+        return md5($password);
+    }
+   function ganti_password(){
+    $do="admin Menganti Password User lain";
+    $level="2";  
+    $this->log($level,$do);
+    
+    $id_admin = $this->input->post('id_admin');
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
+    $data = array(
+        'id_admin' => $id_admin,
+        'username' => $username,
+        'password' => $this->hashpassword($password)
+    );
+ 
+    $where = array(
+        'id_admin' => $id_admin
+    );
+    $this->M_admin->update_admin($where,$data,'Admin');
+    redirect('HalamanAdmin/User'); 
+    }
+
+    public function log($level,$do){
+                $data = array(
+                'id_log'=>'',
+                'do'=>$do,
+                'level'=>$level,
+                'tgl'=>date("Y-m-d H:i:s")
+                );
+    $this->db->insert('Log',$data);
+
+            }
+
 
                   
     

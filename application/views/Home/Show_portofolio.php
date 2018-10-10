@@ -5,7 +5,7 @@
         <?php foreach ($tampil_portofolio_id as $tampil)  {
          ?>
         <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-          <span class="heading-meta">Home/Project/<?php echo $tampil->Judul_portofolio ?></span>
+          <span class="heading-meta">Home/Portofolio/<?php echo $tampil->Judul_portofolio ?></span>
           <h2 class="colorlib-heading"><?php echo $tampil->Judul_portofolio ?></h2>
         </div>
       </div>

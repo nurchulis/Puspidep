@@ -7,8 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'Assets/css/login.css'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'Assets/css/style.css'; ?>">
   
-  
-<link rel="shortcut icon" href="http://litbang.jogjaprov.go.id/iimg/favicon.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="http://puspidep.org//Assets/images/favicon.ico">
 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

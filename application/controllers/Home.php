@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 			$this->load->model('M_Tampil_project');
 			$this->load->model('M_Tampil_about');
 			$this->load->model('M_Tampil_blog');
+			$this->load->model('M_admin');
 			$this->load->model('M_Tampil_Portofolio');
 	                $this->load->helper('url');
 		}
@@ -54,6 +55,9 @@ class Home extends CI_Controller {
 
 		$tgl=$this->uri->segment('4');
 
+		$data['pro']= $this->M_admin->count_pro();
+		$data['blg']= $this->M_admin->count_blog();
+		$data['por']= $this->M_admin->count_por();
 
 		$data['tampil_project']=$this->M_Tampil_project->tampil_project();
 		$data['tampil_slider_project']=$this->M_Tampil_project->tampil_project_slider();

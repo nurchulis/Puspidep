@@ -48,6 +48,7 @@
 
   .
       <div class="row">
+        
         <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
           <h2 class="colorlib-heading">History</h2>
           <p><?php foreach ($tampil_about as $tampil) {
@@ -56,6 +57,7 @@
           }
           } ?></p>
         </div>
+
         <div class="col-md-8 animate-box" data-animate-effect="fadeInRight">
           <div class="fancy-collapse-panel">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -125,35 +127,34 @@
   </div>
 
 
-  <div id="colorlib-counter" class="colorlib-counters" style="background-image: url(<?php echo base_url() ?>Assets/images/header.jpg);" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="colorlib-narrow-content">
-      <div class="row">
+<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(<?php echo base_url() ?>Assets/images/header.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="colorlib-narrow-content">
+          <div class="row">
+          </div>
+          <div class="row">
+            <div class="col-md-3 text-center animate-box">
+              <span class="icon"><i class="flaticon-sketch"></i></span>
+              <span class="colorlib-counter js-counter" data-from="0" data-to="11" data-speed="100" data-refresh-interval="50"></span>
+            </div>
+            <div class="col-md-3 text-center animate-box">
+              <span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
+              <span class="colorlib-counter js-counter" data-from="0" data-to="<?php echo $pro; ?>" data-speed="100" data-refresh-interval="50"></span>
+              <span class="colorlib-counter-label">Project</span>
+            </div>
+            <div class="col-md-3 text-center animate-box">
+              <span class="icon"><i class="flaticon-engineering"></i></span>
+              <span class="colorlib-counter js-counter" data-from="0" data-to="<?php echo $por; ?>" data-speed="100" data-refresh-interval="50"></span>
+              <span class="colorlib-counter-label">Portofolio</span>
+            </div>
+            <div class="col-md-3 text-center animate-box">
+              <span class="icon"><i class="flaticon-collaboration"></i></span>
+              <span class="colorlib-counter js-counter" data-from="0" data-to="<?php echo $blg; ?>" data-speed="100" data-refresh-interval="50"></span>
+              <span class="colorlib-counter-label">Blog</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-md-3 text-center animate-box">
-          <span class="icon"><i class="flaticon-sketch"></i></span>
-          <span class="colorlib-counter js-counter" data-from="0" data-to="11" data-speed="100" data-refresh-interval="50"></span>
-          <span class="colorlib-counter-label">Projects</span>
-        </div>
-        <div class="col-md-3 text-center animate-box">
-          <span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
-          <span class="colorlib-counter js-counter" data-from="0" data-to="20" data-speed="100" data-refresh-interval="50"></span>
-          <span class="colorlib-counter-label">Researchers</span>
-        </div>
-        <div class="col-md-3 text-center animate-box">
-          <span class="icon"><i class="flaticon-engineering"></i></span>
-          <span class="colorlib-counter js-counter" data-from="0" data-to="15" data-speed="100" data-refresh-interval="50"></span>
-          <span class="colorlib-counter-label">Portofolio</span>
-        </div>
-        <div class="col-md-3 text-center animate-box">
-          <span class="icon"><i class="flaticon-collaboration"></i></span>
-          <span class="colorlib-counter js-counter" data-from="0" data-to="25" data-speed="100" data-refresh-interval="50"></span>
-          <span class="colorlib-counter-label">Partners</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div id="get-in-touch" class="colorlib-bg-color">
     <div class="colorlib-narrow-content">

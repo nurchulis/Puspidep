@@ -77,62 +77,21 @@
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">PROJECT</span>
-							<h2 class="colorlib-heading">Here are some of our expertise</h2>
+							<span class="heading-meta">Video</span>
+							<h2 class="colorlib-heading">See the Video</h2>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
-							<div class="row">
-								<div class="col-md-12">
-		<?php foreach ($tampil_project as $tampil) {
-			?>
-									<div class="colorlib-feature animate-box" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
-											<i class="<?php echo $tampil->logo_project ?>"></i>
-										</div>
-										<div class="colorlib-text">
-											<h3><?php echo $tampil->judul_project ?></h3>
-											<p><?php echo $tampil->deskripsi_project ?> </p>
-										</div>
-									</div>
-		<?php } ?>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="row">
-
-
-								<div class="col-md-6">
-									<?php foreach ($tampil_slider_project as $tampil) { ?>
-
-									<?php if($tampil->id_slider_project % 2 == 1){ ?>
-									<a href="portofolio.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar ?>)"></div>
-										<div class="desc">
-											<h3><?php echo $tampil->Judul ?></h3>
-										</div>
-									</a>
-								<?php } ?>
-								<?php } ?>
-								</div>
-								<div class="col-md-6 move-bottom">
-			<?php foreach ($tampil_slider_project as $tampil) { ?>
-									<?php if($tampil->id_slider_project % 2 == 0){ ?>
-									<a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
-										<div class="services-img" style="background-image: url(<?php echo base_url() ?>Assets/images/<?php echo $tampil->Gambar ?>)"></div>
-										<div class="desc">
-											<h3><?php echo $tampil->Judul ?></h3>
-										</div>
-									</a>
-								<?php } ?>
-		<?php } ?>
-								</div>
-
-
-							</div>
-						</div>
+						<video width="100%" controls autoplay>
+  <source src="<?php echo base_url() ?>Assets/images/vid1.mp4" type="video/mp4">
+  
+  Your browser does not support HTML5 video.
+</video>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
 					</div>
 				</div>
 			</div>
@@ -147,24 +106,20 @@
 					<div class="row">
 						<div class="col-md-3 text-center animate-box">
 							<span class="icon"><i class="flaticon-sketch"></i></span>
-							<span class="colorlib-counter js-counter" data-from="0" data-to="11" data-speed="100" data-refresh-interval="50"></span>
+							<span class="colorlib-counter js-counter" data-from="0" data-to="<?php echo $pro; ?>" data-speed="100" data-refresh-interval="50"></span>
 							<span class="colorlib-counter-label">Projects</span>
 						</div>
 						<div class="col-md-3 text-center animate-box">
 							<span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
-							<span class="colorlib-counter js-counter" data-from="0" data-to="20" data-speed="100" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Researchers</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="icon"><i class="flaticon-engineering"></i></span>
-							<span class="colorlib-counter js-counter" data-from="0" data-to="15" data-speed="100" data-refresh-interval="50"></span>
+							<span class="colorlib-counter js-counter" data-from="0" data-to="<?php echo $por; ?>" data-speed="100" data-refresh-interval="50"></span>
 							<span class="colorlib-counter-label">Portofolio</span>
 						</div>
 						<div class="col-md-3 text-center animate-box">
-							<span class="icon"><i class="flaticon-collaboration"></i></span>
-							<span class="colorlib-counter js-counter" data-from="0" data-to="25" data-speed="100" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Partners</span>
+							<span class="icon"><i class="flaticon-engineering"></i></span>
+							<span class="colorlib-counter js-counter" data-from="0" data-to="<?php echo $blg ?>" data-speed="100" data-refresh-interval="50"></span>
+							<span class="colorlib-counter-label">Blog</span>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -174,7 +129,7 @@
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
 							<span class="heading-meta">PORTOFOLIO</span>
-							<h2 class="colorlib-heading animate-box">Recent Projects</h2>
+							<h2 class="colorlib-heading animate-box">Recent Portofolio</h2>
 						</div>
 					</div>
 
@@ -186,13 +141,9 @@
 							<div class="project" style="background-image: url(<?php echo base_url() ?>Assets/images/Kiriman/thumb/<?php echo $tampil->Gambar_portofolio ?>);">
 								<div class="desc">
 									<div class="con">
-										<h3><a href="project.html"><?php echo $tampil->Judul_portofolio ?></a></h3>
+										<h3><a href="<?php echo base_url() ?>Portofolio/Show_portofolio/<?php echo $tampil->id_portofolio ?>/<?php echo $tampil->tgl_portofolio ?>"><?php echo $tampil->Judul_portofolio ?></a></h3>
 										<span><?php echo $tampil->deskripsi ?></span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
+										
 									</div>
 								</div>
 							</div>
@@ -216,7 +167,7 @@
 							<div class="blog-entry">
 								<a href="blog.html" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/Kiriman/thumb/<?php echo $tampil->gambar_blog ?>" style="height:230px" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
-									<span><small><?php echo $tampil->tgl_blog ?> </small> | <small><?php echo $tampil->kategori ?></small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<span><small><?php echo $tampil->tgl_blog ?> </small> | <small><?php echo $tampil->kategori ?></small> </span>
 									<h3><a href="blog.html"><?php echo $tampil->judul_blog ?></a></h3>
 									<p><?php echo $tampil->deskripsi ?></p>
 								</div>
@@ -227,20 +178,5 @@
 				</div>
 			</div>
 
-				<div id="get-in-touch" class="colorlib-bg-color">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<h2>Get in Touch</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-								<p class="colorlib-lead">Get close with Puspidep</p>
-								<p><a href="<?php echo base_url() ?>Halaman/Contact" class="btn btn-primary btn-learn">Contact us</a></p>
-							</div>
-
-						</div>
-					</div>
-				</div>
+			
 			</div>
