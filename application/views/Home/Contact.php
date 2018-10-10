@@ -33,7 +33,7 @@
 									<i class="icon-phone"></i>
 								</div>
 								<div class="colorlib-text">
-									<p><a href="tel://">+628170424105</a></p>
+									<p><a href="tel://">02744399482</a></p>
 								</div>
 							</div>
 						</div>

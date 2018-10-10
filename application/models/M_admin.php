@@ -4,42 +4,42 @@ class M_admin extends CI_Model{
   function tampil_project(){
 
           $this->db->order_by('DATE(tgl_project)','DESC');
-    return $this->db->get('Project_post')->result();
+    return $this->db->get('project_post')->result();
   }
   function tampil_blog(){
 
           $this->db->order_by('DATE(tgl_blog)','DESC');
-    $hasil= $this->db->get('Blog');
+    $hasil= $this->db->get('blog');
     return $hasil->result();
   }
   function tampil_portofolio(){
 
           $this->db->order_by('DATE(tgl_portofolio)','DESC');
-  	$hasil= $this->db->get('Portofolio');
+  	$hasil= $this->db->get('portofolio');
   	return $hasil->result();
   }
   function ambil_edit_project($id){
 		$this->db->where('id_project_post',$id);
-		return $this->db->get('Project_post')->result();
+		return $this->db->get('project_post')->result();
 	}
 	function ambil_portofolio($id){
 		$this->db->where('id_portofolio',$id);
 
-		return $this->db->get('Portofolio')->result();
+		return $this->db->get('portofolio')->result();
 	}
 	function ambil_blog($id){
 		$this->db->where('id_blog',$id);
-		return $this->db->get('Blog')->result();
+		return $this->db->get('blog')->result();
 
 	}
 	function count_pro(){
-		return $this->db->count_all_results('Project_post');
+		return $this->db->count_all_results('project_post');
 	}
 	function count_blog(){
-		return $this->db->count_all_results('Blog');
+		return $this->db->count_all_results('blog');
 	}
 	function count_por(){
-		return $this->db->count_all_results('Portofolio');
+		return $this->db->count_all_results('portofolio');
 	}
 	function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);
@@ -55,14 +55,14 @@ class M_admin extends CI_Model{
 	function ambil_log(){
 		$this->db->limit('6');
 		$this->db->order_by('DATE(tgl)','DESC');
-		return $this->db->get('Log')->result();
+		return $this->db->get('log')->result();
 	}
 	function ambil_log2(){
 		$this->db->order_by('DATE(tgl)','DESC');
-		return $this->db->get('Log')->result();
+		return $this->db->get('log')->result();
 	}
 	function ambil_admin(){
-		return $this->db->get('Admin')->result();
+		return $this->db->get('admin')->result();
 	}
 	function update_admin($where,$data,$table){
 		$this->db->where($where);

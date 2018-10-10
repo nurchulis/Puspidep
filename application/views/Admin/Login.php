@@ -15,7 +15,7 @@
 <body>
 	<div class="login-page" >
   <div class="form" style="padding-bottom: 10px;">
-  	<div class="col-md-12" style="margin:0px;"><img src="<?php echo base_url().'Assets/puspidep.jpg'; ?>" width="40px"></div>
+  	<div class="col-md-12" style="margin:0px;"><img src="<?php echo base_url().'Assets/puspidep.jpeg'; ?>" width="40px"></div>
   	<div class="col-md-12" style="margin-top: 10px; "><b>Puspidep</b></div>
 
   	<div class="col-md-12" style="margin-top: 10px"><p style="">Selamat Datang, Silakan Login</p></div>

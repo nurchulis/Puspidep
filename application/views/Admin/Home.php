@@ -90,7 +90,7 @@
                                 <td><?php echo $no++; ?></td>
                                 <td class="txt-oflo">Admin</td>
                                 <td><?php echo $tampil->do; ?></td>
-                                <td class="txt-oflo">April 18, 2017</td>
+                                <td class="txt-oflo"><?php echo $tampil->tgl ?></td>
                             </tr>
                           <?php endforeach ?>
 

@@ -58,7 +58,7 @@ echo "asa";
             $level="1";         
             $this->log($level,$do);
 
-    $this->db->insert('Project_post',$data);
+    $this->db->insert('project_post',$data);
     redirect('HalamanAdmin/Posting_home');
 }
 }
@@ -86,7 +86,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $level="2";         
             $this->log($level,$do);
     $where = array('id_project_post' =>$this->input->post('id_project'));   
-    $this->M_kirim->update_project($where,$data,'Project_post');
+    $this->M_kirim->update_project($where,$data,'project_post');
       redirect('HalamanAdmin/Posting_home');
 
 }else{
@@ -135,7 +135,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $level="2";         
             $this->log($level,$do);
     $where = array('id_project_post' =>$this->input->post('id_project'));   
-    $this->M_kirim->update_project($where,$data,'Project_post');
+    $this->M_kirim->update_project($where,$data,'project_post');
    redirect('HalamanAdmin/Posting_home');
 }
 }   
@@ -190,7 +190,7 @@ echo "asa";
             $level="1";         
             $this->log($level,$do);   
 
-    $this->db->insert('Portofolio',$data);
+    $this->db->insert('portofolio',$data);
     redirect('HalamanAdmin/Posting_home');
 }
 }
@@ -218,7 +218,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $level="2";         
             $this->log($level,$do);   
     $where = array('id_portofolio' =>$this->input->post('id_portofolio'));   
-    $this->M_kirim->update_project($where,$data,'Portofolio');
+    $this->M_kirim->update_project($where,$data,'portofolio');
      redirect('HalamanAdmin/Posting_home');
 
 }else{
@@ -268,7 +268,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $this->log($level,$do); 
 
     $where = array('id_portofolio' =>$this->input->post('id_portofolio'));   
-    $this->M_kirim->update_portofolio($where,$data,'Portofolio');
+    $this->M_kirim->update_portofolio($where,$data,'portofolio');
    redirect('HalamanAdmin/Posting_home');
 }
 }
@@ -321,7 +321,7 @@ echo "asa";
      $do="Memposting Sebuah Blog :".$this->input->post('judul_blog');
             $level="1";         
             $this->log($level,$do);     
-    $this->db->insert('Blog',$data);
+    $this->db->insert('blog',$data);
     redirect('HalamanAdmin/Posting_home');
 }
 } 
@@ -349,7 +349,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $level="2";         
             $this->log($level,$do);  
     $where = array('id_blog' =>$this->input->post('id_blog'));   
-    $this->M_kirim->update_blog($where,$data,'Blog');
+    $this->M_kirim->update_blog($where,$data,'blog');
      redirect('HalamanAdmin/Posting_home');
 
 }else{
@@ -398,12 +398,12 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $level="2";         
             $this->log($level,$do);  
     $where = array('id_blog' =>$this->input->post('id_blog'));   
-    $this->M_kirim->update_blog($where,$data,'Blog');
+    $this->M_kirim->update_blog($where,$data,'blog');
    redirect('HalamanAdmin/Posting_home');
 }
 }  
     public function delete_project($id){
-        $fact=$this->db->query('select * from Project_post where id_project_post="'.$id.'"');
+        $fact=$this->db->query('select * from project_post where id_project_post="'.$id.'"');
           $crut=$fact->result();
 
            $path_to_file = './Assets/images/Kiriman/'.$crut[0]->gambar_project;
@@ -416,11 +416,11 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $this->log($level,$do);     
 
 
-             $this->db->delete('Project_post', array('id_project_post'=>$id));
+             $this->db->delete('project_post', array('id_project_post'=>$id));
             redirect('HalamanAdmin/Posting_home');
         }
      public function delete_blog($id){
-        $fact=$this->db->query('select * from Blog where id_blog="'.$id.'"');
+        $fact=$this->db->query('select * from blog where id_blog="'.$id.'"');
           $crut=$fact->result();
 
            $path_to_file = './Assets/images/Kiriman/'.$crut[0]->gambar_blog;
@@ -433,11 +433,11 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $this->log($level,$do);   
 
 
-             $this->db->delete('Blog', array('id_blog'=>$id));
+             $this->db->delete('blog', array('id_blog'=>$id));
             redirect('HalamanAdmin/Posting_home');
         }
       public function delete_por($id){
-        $fact=$this->db->query('select * from Portofolio where id_portofolio="'.$id.'"');
+        $fact=$this->db->query('select * from portofolio where id_portofolio="'.$id.'"');
           $crut=$fact->result();
 
            $path_to_file = './Assets/images/Kiriman/'.$crut[0]->Gambar_portofolio;
@@ -450,7 +450,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $this->log($level,$do);   
 
 
-             $this->db->delete('Portofolio', array('id_portofolio'=>$id));
+             $this->db->delete('portofolio', array('id_portofolio'=>$id));
             redirect('HalamanAdmin/Posting_home');
         }
 
@@ -483,7 +483,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
 
                         $where = array(
                         'id_slider' =>$this->input->post('id_slider'));           
-                        $this->M_admin->update_slider($where,$data,'Slider');
+                        $this->M_admin->update_slider($where,$data,'slider');
                         redirect('HalamanAdmin/Setting');
                       
                     }
@@ -522,7 +522,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $this->log($level,$do);
                
              $where = array('id_slider' =>$this->input->post('id_slider'));           
-            $this->M_admin->update_slider($where,$data,'Slider');
+            $this->M_admin->update_slider($where,$data,'slider');
             redirect('HalamanAdmin/Setting');
             }
             }
@@ -570,7 +570,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
             $this->log($level,$do);
              
              $where = array('id_about' =>$this->input->post('id_about'));           
-            $this->M_admin->update_about($where,$data,'About');
+            $this->M_admin->update_about($where,$data,'about');
             redirect('HalamanAdmin/Setting');
             }
             }
@@ -590,7 +590,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
     $do="Mengedit settingan di About ";
             $level="2";         
             $this->log($level,$do);
-    $this->M_admin->update_about($where,$data,'About');
+    $this->M_admin->update_about($where,$data,'about');
        redirect('HalamanAdmin/Setting');
     }
     public function hashpassword($password) {
@@ -613,7 +613,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
     $where = array(
         'id_admin' => $id_admin
     );
-    $this->M_admin->update_admin($where,$data,'Admin');
+    $this->M_admin->update_admin($where,$data,'admin');
     redirect('HalamanAdmin/User'); 
     }
 
@@ -624,7 +624,7 @@ if(!$this->upload->do_upload('gambar_kiriman')){
                 'level'=>$level,
                 'tgl'=>date("Y-m-d H:i:s")
                 );
-    $this->db->insert('Log',$data);
+    $this->db->insert('log',$data);
 
             }
 

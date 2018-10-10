@@ -40,7 +40,7 @@
 						<?php } } ?>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="about-desc">
+							<div>
 								<span class="heading-meta">ABOUT</span>
 								<?php foreach ($tampil_about as $tampil) {
 									if($tampil->place == 2){
@@ -82,11 +82,12 @@
 						</div>
 					</div>
 					<div class="row">
-						<video width="100%" controls autoplay>
-  <source src="<?php echo base_url() ?>Assets/images/vid1.mp4" type="video/mp4">
-  
-  Your browser does not support HTML5 video.
+				
+<video width="100%"  controls="controls" type="video/mp4" preload="none">
+<source src="<?php echo base_url() ?>Assets/images/vid1.mp4" autostart="false">
+Your browser does not support the video tag.
 </video>
+
 <br/>
 <br/>
 <br/><br/>
@@ -165,10 +166,10 @@
 <?php foreach ($tampil_blog_home as $tampil) { ?>
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/Kiriman/thumb/<?php echo $tampil->gambar_blog ?>" style="height:230px" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="<?php echo base_url() ?>Blog/Show_blog/<?php echo $tampil->id_blog ?>/<?php echo $tampil->tgl_blog ?>" class="blog-img"><img src="<?php echo base_url() ?>Assets/images/Kiriman/thumb/<?php echo $tampil->gambar_blog ?>" style="height:230px" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small><?php echo $tampil->tgl_blog ?> </small> | <small><?php echo $tampil->kategori ?></small> </span>
-									<h3><a href="blog.html"><?php echo $tampil->judul_blog ?></a></h3>
+									<h3><a href="<?php echo base_url() ?>Blog/Show_blog/<?php echo $tampil->id_blog ?>/<?php echo $tampil->tgl_blog ?>"><?php echo $tampil->judul_blog ?></a></h3>
 									<p><?php echo $tampil->deskripsi ?></p>
 								</div>
 							</div>

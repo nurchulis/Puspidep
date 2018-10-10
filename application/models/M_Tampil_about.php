@@ -2,11 +2,11 @@
 class M_Tampil_about extends CI_Model{
 
   function tampil_about(){
-    $hasil= $this->db->get('About');
+    $hasil= $this->db->get('about');
     return $hasil->result();
   }
   function tampil_slider(){
-  	return $this->db->get('Slider')->result();
+  	return $this->db->get('slider')->result();
   }
 }
   ?>

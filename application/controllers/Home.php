@@ -19,14 +19,14 @@ class Home extends CI_Controller {
 		//Konfigurasi Paginasi
 		if($this->uri->segment('2') == 'Blog'){
 					$config['base_url']=base_url()."Halaman/Blog";
-			        $config['total_rows']= $this->db->query("SELECT * FROM Blog")->num_rows();
+			        $config['total_rows']= $this->db->query("SELECT * FROM blog")->num_rows();
 		}else if($this->uri->segment('2') == 'Portofolio') {
 
 					$config['base_url']=base_url()."Halaman/Portofolio";
-			        $config['total_rows']= $this->db->query("SELECT * FROM Portofolio")->num_rows();
+			        $config['total_rows']= $this->db->query("SELECT * FROM portofolio")->num_rows();
 		}else  {
 			$config['base_url']=base_url()."Halaman/Project";
-					$config['total_rows']= $this->db->query("SELECT * FROM Project_post")->num_rows();
+					$config['total_rows']= $this->db->query("SELECT * FROM project_post")->num_rows();
 		}
 
         $config['per_page']=6;

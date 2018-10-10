@@ -58,9 +58,11 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<center><img src="<?php echo base_url() ?>Assets/puspidep.jpg" width="70px;" style="margin-bottom:10px;"></center>
-			<h1 id="colorlib-logo"><a href="index.html">PUSPIDEP</a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
+			<center><img src="<?php echo base_url() ?>Assets/puspidep.jpeg" width="70px;" style="margin-bottom:10px;"></center>
+			
+			<h1 id="colorlib-logo" style="margin-top:50px"><a href="index.html">PUSPIDEP</a></h1>
+			
+			<nav style="margin-top:-20px" id="colorlib-main-menu" role="navigation">
 				<ul class="primary-nav">
 					<li><a href="<?php echo base_url() ?>">Home</a></li>
 					<li><a href="<?php echo base_url() ?>Halaman/Project">Project</a></li>

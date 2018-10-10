@@ -8,7 +8,7 @@ class M_Tampil_portofolio extends CI_Model{
     $this->db->where('status','2');
     $this->db->limit(6);
       $this->db->order_by('DATE(tgl_portofolio)','DESC');
-      $hasilquery=$this->db->get('Portofolio', $config['per_page'], $this->uri->segment(3));
+      $hasilquery=$this->db->get('portofolio', $config['per_page'], $this->uri->segment(3));
       if ($hasilquery->num_rows() > 0) {
           foreach ($hasilquery->result() as $value) {
               $data[]=$value;
@@ -21,7 +21,7 @@ class M_Tampil_portofolio extends CI_Model{
     $this->db->where('status','2');
       $this->db->limit(4);
         $this->db->order_by('DATE(tgl_portofolio)','DESC');
-      $hasil= $this->db->get('Portofolio');
+      $hasil= $this->db->get('portofolio');
       return $hasil->result();
     }
 
@@ -32,7 +32,7 @@ class M_Tampil_portofolio extends CI_Model{
             $this->db->order_by('DATE(tgl_portofolio)','DESC');
         		$this->db->where('id_portofolio', $id);
             $this->db->where('tgl_portofolio', $tgl);
-        		return $this->db->get('Portofolio');
+        		return $this->db->get('portofolio');
         	}
 
 }

@@ -2,7 +2,7 @@
 class M_kirim extends CI_Model{
 
   function tampil_about(){
-    $hasil= $this->db->get('About');
+    $hasil= $this->db->get('about');
     return $hasil->result();
   }
  function update_project($where,$data,$table){
